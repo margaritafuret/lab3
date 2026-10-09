@@ -1,1 +1,138 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* Base Page Styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    color: #222222;
+    line-height: 1.6;
+}
+
+/* MOBILE-FIRST PAGE GRID */
+.page-wrapper {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+
+    gap: 16px;
+
+    padding: 16px;
+}
+
+/* Named Grid Areas */
+.header {
+    grid-area: header;
+
+    background-color: #1f2937;
+    color: white;
+
+    padding: 28px;
+}
+
+.nav {
+    grid-area: nav;
+
+    background-color: #e5e7eb;
+
+    padding: 24px;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+
+    background-color: #1f2937;
+    color: white;
+
+    padding: 20px;
+
+    text-align: center;
+}
+
+/* Header */
+.header h1 {
+    margin-bottom: 6px;
+}
+
+.header p {
+    font-size: 16px;
+}
+
+/* Navigation */
+.nav h2 {
+    margin-bottom: 14px;
+}
+
+.nav a {
+    display: block;
+
+    color: #222222;
+    text-decoration: none;
+
+    margin-bottom: 10px;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+/* MOBILE CARD GRID */
+.card-grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+}
+
+/* Cards */
+.card {
+    background-color: white;
+
+    padding: 24px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 6px;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+}
+
+/* DESKTOP LAYOUT */
+@media (min-width: 768px) {
+
+    .page-wrapper {
+        grid-template-columns: 220px 1fr;
+
+        grid-template-areas:
+            "header header"
+            "nav main"
+            "footer footer";
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-1 {
+        grid-column: 1 / -1;
+    }
+}
